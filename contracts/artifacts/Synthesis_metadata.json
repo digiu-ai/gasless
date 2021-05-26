@@ -1,0 +1,597 @@
+{
+	"compiler": {
+		"version": "0.6.12+commit.27d51765"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "bridgeAdr",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "_id",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_token",
+						"type": "address"
+					}
+				],
+				"name": "BurnRequest",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "_id",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_token",
+						"type": "address"
+					}
+				],
+				"name": "RevertBurnCompleted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "_id",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					}
+				],
+				"name": "RevertSynthesizeRequest",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "_id",
+						"type": "bytes32"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "_token",
+						"type": "address"
+					}
+				],
+				"name": "SynthesisizeCompleted",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "bridge",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_stoken",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_chain2address",
+						"type": "address"
+					}
+				],
+				"name": "burnSyntheticToken",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "txID",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_rtoken",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "_stokenName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_stokenSymbol",
+						"type": "string"
+					}
+				],
+				"name": "createRepresentation",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_txID",
+						"type": "bytes32"
+					}
+				],
+				"name": "emergencyUnburn",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_txID",
+						"type": "bytes32"
+					}
+				],
+				"name": "emergencyUnsyntesizeRequest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_txID",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "address",
+						"name": "_tokenReal",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_to",
+						"type": "address"
+					}
+				],
+				"name": "mintSyntheticToken",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "portal",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "representationReal",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "representationSynt",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"name": "requests",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "recepient",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "chain2address",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "token",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "stoken",
+						"type": "address"
+					},
+					{
+						"internalType": "enum Synthesis.RequestState",
+						"name": "state",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_adr",
+						"type": "address"
+					}
+				],
+				"name": "setBridge",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_adr",
+						"type": "address"
+					}
+				],
+				"name": "setPortal",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"name": "synthesizeStates",
+				"outputs": [
+					{
+						"internalType": "enum Synthesis.SynthesizeState",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Synthesis.sol": "Synthesis"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0x15e2d5bd4c28a88548074c54d220e8086f638a71ed07e6b3ba5a70066fcf458d",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://90faf5851c02f9bd42c5bfb54d4f0421a2612f50ab80b2c4fa24fa3792071cc2",
+				"dweb:/ipfs/QmRGM4F2PcGVF85aTfaA9YBhCHHDqrMhRjyp6fGeBTtirb"
+			]
+		},
+		"@openzeppelin/contracts/math/SafeMath.sol": {
+			"keccak256": "0xcc78a17dd88fa5a2edc60c8489e2f405c0913b377216a5b26b35656b2d0dab52",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://526dc85e1f9b9b45830e202568d267d93dde7a4fcccf4ad7798dadcd92304d3c",
+				"dweb:/ipfs/QmaoXMB972J3cSDLtBq3xBo4jLwqD2uzXTwujtSPqkYVhR"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/ERC20.sol": {
+			"keccak256": "0xca0c2396dbeb3503b51abf4248ebf77a1461edad513c01529df51850a012bee3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://991b44ff44e0496e8554a90f4c0512c28faed45104d40430019f3c67ea67740e",
+				"dweb:/ipfs/Qmc3nRapVbcctELoZS5qe17zLkFB3bETBfwzCTMF1CSuGE"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x5f02220344881ce43204ae4a6281145a67bc52c2bb1290a791857df3d19d78f5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://24427744bd3e6cb73c17010119af12a318289c0253a4d9acb8576c9fb3797b08",
+				"dweb:/ipfs/QmTLDqpKRBuxGxRAmjgXt9AkXyACW3MtKzi7PYjm5iMfGC"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x8d3cb350f04ff49cfb10aef08d87f19dcbaecc8027b0bed12f3275cd12f38cf0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ded47ec7c96750f9bd04bbbc84f659992d4ba901cb7b532a52cd468272cf378f",
+				"dweb:/ipfs/QmfBrGtQP7rZEqEg6Wz6jh2N2Kukpj1z5v3CGWmAqrzm96"
+			]
+		},
+		"@openzeppelin/contracts/utils/Counters.sol": {
+			"keccak256": "0x21662e4254ce4ac8570b30cc7ab31435966b3cb778a56ba4d09276881cfb2437",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://acce8fe6adc670f9987a8b6aedc4cc0abcd0dcd2e152d649a12099d735bd7bad",
+				"dweb:/ipfs/QmXAk17oK3daBmA8CGyVcU56L496jW3U6Ef1WkfHyB1JAV"
+			]
+		},
+		"contracts/IBridge.sol": {
+			"keccak256": "0xde58b4399cef7a0162f9389f5155274e99b1bb876d18fe9f64a348044e0cd994",
+			"urls": [
+				"bzz-raw://e67d845dbefeafa2e8a0bccf5695e56c64254146d1d8c75945b310ac2427b720",
+				"dweb:/ipfs/QmWSPF2NnrHGm965vdDeiap6wDdTH2VpZF582j7MhJfdc8"
+			]
+		},
+		"contracts/ISyntERC20.sol": {
+			"keccak256": "0x0c1e47b1258f603871231b9af84073bbf04386e28a4245269c51572093d25be7",
+			"urls": [
+				"bzz-raw://9ccc03336b39533b4306d6d6f72347f61f8d9815557627eebc69ebf1824b59ce",
+				"dweb:/ipfs/QmUkcc3xV9h9eXAfKWuiXL7itfGASYpU4dBCFxCQGYh31e"
+			]
+		},
+		"contracts/SyntERC20.sol": {
+			"keccak256": "0x446b62ff3b070cf33f2fe059270939ca7192cfd028faf386d556db812ea486d8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d2ad77412a7bbcbc111ffa2999109566233028eb611b8b0b94e2cd9ff818d3a1",
+				"dweb:/ipfs/QmYkPotuhQCViZWhv8m8ScBahhc7vxaNcAWmoNyvrRRoCf"
+			]
+		},
+		"contracts/Synthesis.sol": {
+			"keccak256": "0xab4d1eaeb7b5d72760f0e3dfe03273d2be1db606bfc71c55bf39580489651ea0",
+			"urls": [
+				"bzz-raw://3e482f23ea218c049db7396586934c82bdd88b3651a6d3457ae234b060111ca6",
+				"dweb:/ipfs/QmSxFqikmNvwgzK1mQ7pkVPnXpET9uy432cYoR8agVygon"
+			]
+		},
+		"contracts/gsn/deps/token/ERC20/extensions/draft-ERC20Permit.sol": {
+			"keccak256": "0x1108c3d3c8c36d030b348a4b9de07087f2141e6c7a70f11bd490254671dba832",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://046c89a053bb4543379586352afdeb3c33852fc68f10c0cbcc739dd9b604686d",
+				"dweb:/ipfs/QmRkdnhh2GiDHULDk4YRiN6apyBfneDe5nN57Liexw9CFK"
+			]
+		},
+		"contracts/gsn/deps/token/ERC20/extensions/draft-IERC20Permit.sol": {
+			"keccak256": "0x610c76a6e30a2ac6abd687738c0168affe14a4f993bbd0b84448d718bfa837d9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://287d37bbfbe328275bee21fa92b339cf1774ca734aae6a36f2d66c7c6017dd68",
+				"dweb:/ipfs/QmRGCb8PuFipG4qc8rutW3JHnXnE858oNyBhx5VMUv58oh"
+			]
+		},
+		"contracts/gsn/deps/utils/cryptography/ECDSA.sol": {
+			"keccak256": "0x9ab5558693f339e27f41a065873baba6a36f7f47d2fe089da8ffed7bcb1ede38",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://22a5096897cc6abb95761267ea2c8412497a4e224831901f92a757c421818516",
+				"dweb:/ipfs/QmUtrHQfHVrZeNPmH4n9VKiQ5Wa7UPTEspYp9b7VzHVwCh"
+			]
+		},
+		"contracts/gsn/deps/utils/cryptography/draft-EIP712.sol": {
+			"keccak256": "0x3cd6493afc52eb2189c1b208f185000a678f545b1aa86a5d41664223235de82b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a88ca4dc9063c47c7b5a357cf225f6e729c7c9d0c1d0f7cd8dbf15616bfeb74a",
+				"dweb:/ipfs/QmPQwFEUuTefSPyewAeK9qZ8RfqyEGadEgjw8LrP1uGs3L"
+			]
+		}
+	},
+	"version": 1
+}

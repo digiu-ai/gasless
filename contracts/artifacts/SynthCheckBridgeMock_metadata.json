@@ -1,0 +1,58 @@
+{
+	"compiler": {
+		"version": "0.8.3+commit.8d00100c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "synt",
+						"type": "address"
+					}
+				],
+				"name": "checkSynt",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts_dex/contracts/checkSynt.sol": "SynthCheckBridgeMock"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts_dex/contracts/checkSynt.sol": {
+			"keccak256": "0x2111cc54961cafb5fd66e9556b76cc3811c6fb7cac369e58c335b3f9ec81d0d7",
+			"urls": [
+				"bzz-raw://4fe76f9780bba36a313377f629b117ae298177968a863c4b95116730099daed7",
+				"dweb:/ipfs/Qmb3sb5DktnWBszpPm7PMKq1GPUwcfGPqVmvEgo3Kh3tmk"
+			]
+		}
+	},
+	"version": 1
+}

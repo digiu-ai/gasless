@@ -1,0 +1,44 @@
+{
+	"compiler": {
+		"version": "0.8.3+commit.8d00100c"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts_dex/contracts/checkSynt.sol": "SynthCheck"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts_dex/contracts/checkSynt.sol": {
+			"keccak256": "0x146b4f1d68c892ca75855628d8fc5bd19a9b72dd2eb4cd536d7e8a1ec5b3228f",
+			"urls": [
+				"bzz-raw://5e7aa347027beeca1bf93f9151c26acb2cd7c52b36e2413afe282d8e8cd47979",
+				"dweb:/ipfs/QmWfSck5hSfFysZnvrFbapGVWGR3YnSUnKh4p3mgUyZHy9"
+			]
+		}
+	},
+	"version": 1
+}
