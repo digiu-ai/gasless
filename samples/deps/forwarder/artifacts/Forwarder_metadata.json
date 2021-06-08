@@ -1,0 +1,450 @@
+{
+	"compiler": {
+		"version": "0.8.4+commit.c7e474f2"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "domainSeparator",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "domainValue",
+						"type": "bytes"
+					}
+				],
+				"name": "DomainRegistered",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "typeHash",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "typeStr",
+						"type": "string"
+					}
+				],
+				"name": "RequestTypeRegistered",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "EIP712_DOMAIN_TYPE",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "GENERIC_PARAMS",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "from",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "to",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "value",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "gas",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "nonce",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bytes",
+								"name": "data",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct IForwarder.ForwardRequest",
+						"name": "req",
+						"type": "tuple"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "requestTypeHash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes",
+						"name": "suffixData",
+						"type": "bytes"
+					}
+				],
+				"name": "_getEncoded",
+				"outputs": [
+					{
+						"internalType": "bytes",
+						"name": "",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"name": "domains",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "from",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "to",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "value",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "gas",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "nonce",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bytes",
+								"name": "data",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct IForwarder.ForwardRequest",
+						"name": "req",
+						"type": "tuple"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "domainSeparator",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "requestTypeHash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes",
+						"name": "suffixData",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "sig",
+						"type": "bytes"
+					}
+				],
+				"name": "execute",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "success",
+						"type": "bool"
+					},
+					{
+						"internalType": "bytes",
+						"name": "ret",
+						"type": "bytes"
+					}
+				],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					}
+				],
+				"name": "getNonce",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "version",
+						"type": "string"
+					}
+				],
+				"name": "registerDomainSeparator",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "typeName",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "typeSuffix",
+						"type": "string"
+					}
+				],
+				"name": "registerRequestType",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"name": "typeHashes",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "from",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "to",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "value",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "gas",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "nonce",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bytes",
+								"name": "data",
+								"type": "bytes"
+							}
+						],
+						"internalType": "struct IForwarder.ForwardRequest",
+						"name": "req",
+						"type": "tuple"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "domainSeparator",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "requestTypeHash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes",
+						"name": "suffixData",
+						"type": "bytes"
+					},
+					{
+						"internalType": "bytes",
+						"name": "sig",
+						"type": "bytes"
+					}
+				],
+				"name": "verify",
+				"outputs": [],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"registerDomainSeparator(string,string)": {
+					"params": {
+						"name": "the domain's display name",
+						"version": "the domain/protocol version"
+					}
+				},
+				"registerRequestType(string,string)": {
+					"params": {
+						"typeName": "- the name of the request type.",
+						"typeSuffix": "- anything after the generic params can be empty string (if no extra fields are needed)        if it does contain a value, then a comma is added first."
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"registerDomainSeparator(string,string)": {
+					"notice": "Register a new domain separator. The domain separator must have the following fields: name,version,chainId, verifyingContract. the chainId is the current network's chainId, and the verifyingContract is this forwarder. This method is given the domain name and version to create and register the domain separator value."
+				},
+				"registerRequestType(string,string)": {
+					"notice": "Register a new Request typehash."
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/gsn/deps/forwarder/Forwarder.sol": "Forwarder"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/gsn/deps/forwarder/Forwarder.sol": {
+			"keccak256": "0x711875a5a0fff7b3b50811c003364abb14e4c5acfc5244df717f2d91c02673cf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e1e7213f2d4769a457c8738a2abd90ad94a3d89cad7ce9275edc08b4c546551c",
+				"dweb:/ipfs/Qmb82gYg2CKnrrQsQVEZhykQcqNkWj3GAjL8uRR9V9RWTB"
+			]
+		},
+		"contracts/gsn/deps/forwarder/IForwarder.sol": {
+			"keccak256": "0xf7e5728de070ecc480e856239d80f432a369fe22677d99cce0646de7fb1db0c0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1e43b10c46e41f9ee5e888f1c53244bc70080926970b870955a5bb7109086120",
+				"dweb:/ipfs/QmUJoWh5jJ8DCYqcmGgLwmee8QiSwHdCvzqfrec7jx65uW"
+			]
+		},
+		"contracts/gsn/deps/utils/cryptography/ECDSA.sol": {
+			"keccak256": "0x2b7a01bbc90040fd4a48bc143ac5a192da3b9bfc559ac08a78eaca40bf49e436",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4d8a02af79b7d1c4eaa385d3b9d26509ac2619eab43bfbbc2ef9ef74508f8146",
+				"dweb:/ipfs/QmWhEKw9ZmDjc9qfLmJcrxgopoCvbBNyFhUCJSewhSpzRi"
+			]
+		}
+	},
+	"version": 1
+}

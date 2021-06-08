@@ -1,0 +1,53 @@
+{
+	"compiler": {
+		"version": "0.8.4+commit.c7e474f2"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/gsn/deps/interfaces/GsnTypes.sol": "GsnTypes"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/gsn/deps/forwarder/IForwarder.sol": {
+			"keccak256": "0xf7e5728de070ecc480e856239d80f432a369fe22677d99cce0646de7fb1db0c0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1e43b10c46e41f9ee5e888f1c53244bc70080926970b870955a5bb7109086120",
+				"dweb:/ipfs/QmUJoWh5jJ8DCYqcmGgLwmee8QiSwHdCvzqfrec7jx65uW"
+			]
+		},
+		"contracts/gsn/deps/interfaces/GsnTypes.sol": {
+			"keccak256": "0xaabfcb4950e95e8edd9c9e8476f26180c1880154cc8195135f40bb372022e332",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6428feb103c88f257ad6662fb24bb238dfb5e3c435839807955f66350bb5f2fd",
+				"dweb:/ipfs/Qmby6UnBmXJhjjM5HRaYtgUcjdxDnRsJYqCTbcuny72LpW"
+			]
+		}
+	},
+	"version": 1
+}
